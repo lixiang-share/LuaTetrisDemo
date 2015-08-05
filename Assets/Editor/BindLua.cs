@@ -278,6 +278,8 @@ public static class LuaBinding
         _GT(typeof(GUI)),
         _GT(typeof(System.Random)),
         _GT(typeof(KeyCode)),
+        _GT(typeof(RuntimePlatform)),
+      //  _GT(typeof(Wshrzzz.UnityUtil.GUILogDisplay)),
     };
 
 

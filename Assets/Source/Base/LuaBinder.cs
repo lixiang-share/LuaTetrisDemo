@@ -55,6 +55,7 @@ public static class LuaBinder
 		RendererWrap.Register(L);
 		RenderSettingsWrap.Register(L);
 		RenderTextureWrap.Register(L);
+		RuntimePlatformWrap.Register(L);
 		ScreenWrap.Register(L);
 		SkinnedMeshRendererWrap.Register(L);
 		SleepTimeoutWrap.Register(L);

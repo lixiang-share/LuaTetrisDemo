@@ -9,4 +9,8 @@ public class AppConst {
     public static bool UsePbLua = true;                         //Protobuff-lua-gen
     public static bool UseCJson = true;                         //CJson
     public static bool UseSproto = true;                        //Sproto
+
+
+    public static string AppName = "Sight_Tetris_Demo";
+    public static bool DebugMode = false;
 }

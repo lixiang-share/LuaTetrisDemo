@@ -18,6 +18,8 @@ public class AppConstWrap
 			new LuaField("UsePbLua", get_UsePbLua, set_UsePbLua),
 			new LuaField("UseCJson", get_UseCJson, set_UseCJson),
 			new LuaField("UseSproto", get_UseSproto, set_UseSproto),
+			new LuaField("AppName", get_AppName, set_AppName),
+			new LuaField("DebugMode", get_DebugMode, set_DebugMode),
 		};
 
 		LuaScriptMgr.RegisterLib(L, "AppConst", typeof(AppConst), regs, fields, typeof(object));
@@ -87,6 +89,20 @@ public class AppConstWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_AppName(IntPtr L)
+	{
+		LuaScriptMgr.Push(L, AppConst.AppName);
+		return 1;
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_DebugMode(IntPtr L)
+	{
+		LuaScriptMgr.Push(L, AppConst.DebugMode);
+		return 1;
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int set_UsePbc(IntPtr L)
 	{
 		AppConst.UsePbc = LuaScriptMgr.GetBoolean(L, 3);
@@ -118,6 +134,20 @@ public class AppConstWrap
 	static int set_UseSproto(IntPtr L)
 	{
 		AppConst.UseSproto = LuaScriptMgr.GetBoolean(L, 3);
+		return 0;
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_AppName(IntPtr L)
+	{
+		AppConst.AppName = LuaScriptMgr.GetString(L, 3);
+		return 0;
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int set_DebugMode(IntPtr L)
+	{
+		AppConst.DebugMode = LuaScriptMgr.GetBoolean(L, 3);
 		return 0;
 	}
 }

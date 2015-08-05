@@ -12,12 +12,16 @@ public class UtilWrap
 			new LuaMethod("LogWarning", LogWarning),
 			new LuaMethod("LogError", LogError),
 			new LuaMethod("CallMethod", CallMethod),
+			new LuaMethod("md5", md5),
+			new LuaMethod("md5file", md5file),
+			new LuaMethod("AppContentPath", AppContentPath),
 			new LuaMethod("New", _CreateUtil),
 			new LuaMethod("GetClassType", GetClassType),
 		};
 
 		LuaField[] fields = new LuaField[]
 		{
+			new LuaField("DataPath", get_DataPath, null),
 		};
 
 		LuaScriptMgr.RegisterLib(L, "Util", typeof(Util), regs, fields, typeof(object));
@@ -48,6 +52,13 @@ public class UtilWrap
 	static int GetClassType(IntPtr L)
 	{
 		LuaScriptMgr.Push(L, classType);
+		return 1;
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_DataPath(IntPtr L)
+	{
+		LuaScriptMgr.Push(L, Util.DataPath);
 		return 1;
 	}
 
@@ -97,6 +108,35 @@ public class UtilWrap
 		object[] objs2 = LuaScriptMgr.GetParamsObject(L, 3, count - 2);
 		object[] o = Util.CallMethod(arg0,arg1,objs2);
 		LuaScriptMgr.PushArray(L, o);
+		return 1;
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int md5(IntPtr L)
+	{
+		LuaScriptMgr.CheckArgsCount(L, 1);
+		string arg0 = LuaScriptMgr.GetLuaString(L, 1);
+		string o = Util.md5(arg0);
+		LuaScriptMgr.Push(L, o);
+		return 1;
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int md5file(IntPtr L)
+	{
+		LuaScriptMgr.CheckArgsCount(L, 1);
+		string arg0 = LuaScriptMgr.GetLuaString(L, 1);
+		string o = Util.md5file(arg0);
+		LuaScriptMgr.Push(L, o);
+		return 1;
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int AppContentPath(IntPtr L)
+	{
+		LuaScriptMgr.CheckArgsCount(L, 0);
+		string o = Util.AppContentPath();
+		LuaScriptMgr.Push(L, o);
 		return 1;
 	}
 }

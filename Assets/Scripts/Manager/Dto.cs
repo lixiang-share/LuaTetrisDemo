@@ -13,7 +13,7 @@ public class Dto{
             if (_LuaMgr == null)
             {
                 _LuaMgr = new LuaScriptMgr();
-                _LuaMgr.Start();
+               // _LuaMgr.Start();
             }
             return _LuaMgr;
         }

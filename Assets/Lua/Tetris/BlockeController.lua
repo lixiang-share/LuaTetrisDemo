@@ -1,7 +1,7 @@
 --require "Common/GUIShow";
 require "System/Math";
 --require "Tetris/GameManager";
-require "Tetris/VedioController";
+require "Tetris/AudioController";
 --游戏中方块的控制逻辑
 BlockeController = {};
 local this = BlockeController;
@@ -10,6 +10,8 @@ local Random = System.Random;
 local Time = UnityEngine.Time;
 local Input = UnityEngine.Input;
 local KeyCode = UnityEngine.KeyCode;
+local RuntimePlatform = UnityEngine.RuntimePlatform;
+local  TouchPhase = UnityEngine.TouchPhase;
 
 --保存游戏中方块的矩阵，1：有方块，，0：无方块
 gameMatrix={};
@@ -85,9 +87,47 @@ function this.FixedUpdate( )
 		moveDown();
 		moveDownInterval = moveDownRate;
 	end
+
+
+	if Application.platform == RuntimePlatform.WindowsPlayer or Application.platform == RuntimePlatform.WindowsEditor then
+		InputOnWin();
+	else
+		InputOnMobilePhone();
+	end
+	
+	
+end
+
+local endinterval = 0.2;
+function InputOnMobilePhone( )
+		endinterval = endinterval-Time.deltaTime;
+        if endinterval < 0 then
+        	if Input.touchCount > 0 then
+            	local vect = Input.GetTouch(0).deltaPosition;
+            	if (math.abs(vect.x) > math.abs(vect.y))then
+                	if vect.x > 0 then
+                		moveRigtht();
+                	else
+                		moveLeft();
+              	  end
+          	  	else
+            		if vect.y < 0 then 
+            			moveDown();
+            		end
+            		if vect.y > 0 then
+            			rotate();
+            		end
+            	end
+       		end
+       		endinterval = 0.2;
+        end
+end
+
+
+function InputOnWin( )
 	--用户输入控制，，美妙最多相应5次用户输入
 
-	local isLeft = Input.GetKey(KeyCode.A) or Input.GetKey(KeyCode.LeftArrow) ;
+	local isLeft = Input.GetKey(KeyCode.A) or Input.GetKey(KeyCode.LeftArrow);
 	local isRight = Input.GetKey(KeyCode.D) or Input.GetKey(KeyCode.RightArrow);
 	local  isDown  = Input.GetKey(KeyCode.S) or Input.GetKey(KeyCode.DownArrow);
 	local  isUp = Input.GetKey(KeyCode.W) or Input.GetKey(KeyCode.UpArrow);
@@ -98,10 +138,9 @@ function this.FixedUpdate( )
 		move(isLeft , isRight , isDown , isUp);
 		inputInterval = inputRate;
 	end
-
-
-	
 end
+
+
 
 function move( isLeft , isRight , isDown , isUp)
 	--TODO : 此处应配置输入管理器
