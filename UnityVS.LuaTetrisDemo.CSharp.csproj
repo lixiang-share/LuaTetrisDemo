@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0EA35B9-2C35-D116-0B5D-F99305773BE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <CompilerResponseFile></CompilerResponseFile>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityVersion>4.6.5f1</UnityVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Debug\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;UNITY_4_6_5;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\UnityVS_bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>TRACE;UNITY_4_6_5;UNITY_4_6;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_IL2CPP;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;UNITY5_SCRIPTING_IN_UNITY4;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="Boo.Lang" />
+    <Reference Include="UnityScript.Lang" />
+    <Reference Include="UnityEngine">
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Debuger">
+      <HintPath>Assets\Plugins\Debuger.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Scripts\Common\LuaBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Common\LuaComponent.cs" />
+    <Compile Include="Assets\Scripts\Manager\Dto.cs" />
+    <Compile Include="Assets\Scripts\Manager\GameStart.cs" />
+    <Compile Include="Assets\Scripts\Utility\Util.cs" />
+    <Compile Include="Assets\Source\Base\AppConst.cs" />
+    <Compile Include="Assets\Source\Base\Client.cs" />
+    <Compile Include="Assets\Source\Base\Debugger.cs" />
+    <Compile Include="Assets\Source\Base\DelegateFactory.cs" />
+    <Compile Include="Assets\Source\Base\LockFreeQueue.cs" />
+    <Compile Include="Assets\Source\Base\LuaBinder.cs" />
+    <Compile Include="Assets\Source\Base\LuaScriptMgr.cs" />
+    <Compile Include="Assets\Source\Base\LuaWrap.cs" />
+    <Compile Include="Assets\Source\Base\ToLuaExport.cs" />
+    <Compile Include="Assets\Source\LuaWrap\AnimationBlendModeWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\AnimationClipWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\AnimationStateWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\AnimationWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\AppConstWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\ApplicationWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\AssetBundleWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\AsyncOperationWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\AudioClipWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\AudioSourceWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\BehaviourWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\BlendWeightsWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\BoxColliderWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\CameraClearFlagsWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\CameraWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\CharacterControllerWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\ColliderWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\ComponentWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\DebuggerWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\DelegateFactoryWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\DelegateWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\EnumWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\GUILayerWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\GUILayoutWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\GUIWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\GameObjectWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\IEnumeratorWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\InputWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\KeyCodeWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\LightTypeWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\LightWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\LuaEnumTypeWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\MaterialWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\MeshColliderWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\MeshRendererWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\MonoBehaviourWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\ObjectWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\ParticleAnimatorWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\ParticleEmitterWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\ParticleRendererWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\ParticleSystemWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\PhysicsWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\PlayModeWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\QualitySettingsWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\QueueModeWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\RandomWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\RectTransformWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\RectWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\RenderSettingsWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\RenderTextureWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\RendererWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\RuntimePlatformWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\ScreenWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\SkinnedMeshRendererWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\SleepTimeoutWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\SpaceWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\SphereColliderWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\System_ObjectWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\TextureWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\TimeWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\TouchPhaseWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\TrackedReferenceWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\TransformWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\TypeWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\UnityEngine_UI_TextWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\UtilWrap.cs" />
+    <Compile Include="Assets\Source\LuaWrap\stringWrap.cs" />
+    <Compile Include="Assets\uLua\Core\CheckType.cs" />
+    <Compile Include="Assets\uLua\Core\GenerateEventAssembly.cs" />
+    <Compile Include="Assets\uLua\Core\Lua.cs" />
+    <Compile Include="Assets\uLua\Core\LuaBase.cs" />
+    <Compile Include="Assets\uLua\Core\LuaDLL.cs" />
+    <Compile Include="Assets\uLua\Core\LuaException.cs" />
+    <Compile Include="Assets\uLua\Core\LuaFunction.cs" />
+    <Compile Include="Assets\uLua\Core\LuaGlobalAttribute.cs" />
+    <Compile Include="Assets\uLua\Core\LuaHideAttribute.cs" />
+    <Compile Include="Assets\uLua\Core\LuaObjectMap.cs" />
+    <Compile Include="Assets\uLua\Core\LuaRegistrationHelper.cs" />
+    <Compile Include="Assets\uLua\Core\LuaScriptException.cs" />
+    <Compile Include="Assets\uLua\Core\LuaStatic.cs" />
+    <Compile Include="Assets\uLua\Core\LuaTable.cs" />
+    <Compile Include="Assets\uLua\Core\Metatables.cs" />
+    <Compile Include="Assets\uLua\Core\MethodWrapper.cs" />
+    <Compile Include="Assets\uLua\Core\ObjectTranslator.cs" />
+    <Compile Include="Assets\uLua\Core\ProxyType.cs" />
+    <Compile Include="Assets\uLua\Examples\01_HelloWorld\HelloWorld.cs" />
+    <Compile Include="Assets\uLua\Examples\02_CreateGameObject\CreateGameObject01.cs" />
+    <Compile Include="Assets\uLua\Examples\02_CreateGameObject\CreateGameObject02.cs" />
+    <Compile Include="Assets\uLua\Examples\03_AccessingLuaVariables\AccessingLuaVariables01.cs" />
+    <Compile Include="Assets\uLua\Examples\03_AccessingLuaVariables\AccessingLuaVariables02.cs" />
+    <Compile Include="Assets\uLua\Examples\04_ScriptsFromFile\ScriptsFromFile_01.cs" />
+    <Compile Include="Assets\uLua\Examples\04_ScriptsFromFile\ScriptsFromFile_02.cs" />
+    <Compile Include="Assets\uLua\Examples\05_CallLuaFunction\CallLuaFunction_01.cs" />
+    <Compile Include="Assets\uLua\Examples\05_CallLuaFunction\CallLuaFunction_02.cs" />
+    <Compile Include="Assets\uLua\Examples\06_LuaCoroutines\LuaCoroutines.cs" />
+    <Compile Include="Assets\uLua\Examples\07_AccessingArray\TestLuaArray.cs" />
+    <Compile Include="Assets\uLua\Examples\08_ProtoBuffer\LuaProtoBuffer01.cs" />
+    <Compile Include="Assets\uLua\Examples\08_ProtoBuffer\TestProtol.cs" />
+    <Compile Include="Assets\uLua\Examples\08_ProtoBuffer\TestProtolWrap.cs" />
+    <Compile Include="Assets\uLua\Examples\09_Delegate\LuaDelegate01.cs" />
+    <Compile Include="Assets\uLua\Examples\09_Delegate\TestEventListener.cs" />
+    <Compile Include="Assets\uLua\Examples\09_Delegate\TestEventListenerWrap.cs" />
+    <Compile Include="Assets\uLua\Examples\10_TestOverride\TestOverride01.cs" />
+    <Compile Include="Assets\uLua\Examples\10_TestOverride\TestOverrideWrap.cs" />
+    <Compile Include="Assets\uLua\Examples\10_TestOverride\TestOverride_SpaceWrap.cs" />
+    <Compile Include="Assets\uLua\Examples\A1_LuaArray\LuaArray.cs" />
+    <Compile Include="Assets\uLua\Examples\A2_LuaEnum\LuaEnum.cs" />
+    <Compile Include="Assets\uLua\Examples\A2_LuaEnum\LuaEnumType.cs" />
+    <Compile Include="Assets\uLua\Examples\A3_LuaClass\LuaClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Lua\System\readme.txt" />
+    <None Include="Assets\StreamingAssets\Lua\System\readme.txt" />
+    <None Include="Assets\StreamingAssets\files.txt" />
+    <None Include="Assets\uLua\Examples\04_ScriptsFromFile\ScriptsFromFile01.lua.txt" />
+    <None Include="Assets\uLua\README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
+</Project>
